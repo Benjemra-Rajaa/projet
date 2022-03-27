@@ -76,6 +76,9 @@
             </p>
           </a>
         </li>
+        @auth('web')
+    {{-- // The user is authenticated... --}}
+     
         <li class="nav-item">
           <a href="#" onclick="document.getElementById('logoutform').submit();" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
@@ -88,6 +91,23 @@
             </p>
           </a>
         </li>
+        @endauth
+        @auth('admin')
+        {{-- // The user is authenticated... --}}
+            <li class="nav-item">
+              <a href="#" onclick="document.getElementById('logoutform').submit();" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  <form action ="{{route('admin.logout')}}" id="logoutform" method="post">
+                  @csrf
+                  </form>
+                  deconnecter
+                  <span class="right badge badge-danger">Out</span>
+                </p>
+              </a>
+            </li>
+            @endauth
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

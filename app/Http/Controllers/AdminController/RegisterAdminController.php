@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Admin;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 class RegisterAdminController extends Controller
 {
-    
+     
 
     public function login(){
      return view('Admin.login');
@@ -33,13 +33,14 @@ class RegisterAdminController extends Controller
             $user = Admin::create([
                 'name' => $request->name,
                 'email' => $request->email,
+                'isAdmin'=>1,
                 'password' => Hash::make($request->password),
+                
             ]);
     
             event(new Registered($user));
-    
+
             Auth::login($user);
-    
             return redirect(RouteServiceProvider::HOME);
         
 

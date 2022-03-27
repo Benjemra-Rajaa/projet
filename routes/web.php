@@ -36,6 +36,9 @@ require __DIR__.'/auth.php';
 Route::group(['prefix'=>'Admin'], function(){
     Route::get('/login', 'AdminController\RegisterAdminController@login')->name('admin.login');
     Route::get('/register','AdminController\RegisterAdminController@register')->name('admin.register');
+    Route::post('/register/admin','AdminController\RegisterAdminController@storeAdmin')->name('admin.store');
+    Route::post('/login','AdminController\LoginController@loginAdmin')->name('admin/login');
+    Route::post('/logout','AdminController\LoginController@destroy_Admin')->name('admin.logout');
     // Route::get('connect', 'AccountController@connect')->name('connect');
 });
 //full calendar
@@ -44,7 +47,7 @@ Route::post('full-calender/action', [FullCalenderController::class, 'action']);
 Route::get('/appoinment', [AppoinmentController::class, 'index']);
 Route::post('appoinment/action', [AppoinmentController::class, 'action']);
 
-Route::get('/admin',[AdminController::class,'index']);
+Route::get('/admin',[AdminController::class,'index'])->name('admin')->middleware('is_Admin');
 
 Route::get('/clients',[AdminController::class,'getClientPage'])->name('clients');
 Route::get('/services',[AdminController::class,'getServicePage'])->name('services');
