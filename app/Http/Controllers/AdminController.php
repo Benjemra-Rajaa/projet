@@ -22,4 +22,5 @@ class AdminController extends Controller
     public function getAppoinmentPage(){
         return view('layouts.appoinment');
     }
+    
 }

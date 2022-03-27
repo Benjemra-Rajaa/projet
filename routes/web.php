@@ -32,8 +32,12 @@ Route::get('/', function () {
 require __DIR__.'/auth.php'; 
 
 
-
-
+// Admin register 
+Route::group(['prefix'=>'Admin'], function(){
+    Route::get('/login', 'AdminController\RegisterAdminController@login')->name('admin.login');
+    Route::get('/register','AdminController\RegisterAdminController@register')->name('admin.register');
+    // Route::get('connect', 'AccountController@connect')->name('connect');
+});
 //full calendar
 Route::get('/full-calender', [FullCalenderController::class, 'index']);
 Route::post('full-calender/action', [FullCalenderController::class, 'action']);
