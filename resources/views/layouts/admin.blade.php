@@ -50,7 +50,7 @@
                       <li><a href="javascript:void(0);">Register <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul>
                           <li><a href="register">Register</a></li>
-                          <li><a href="{{route('admin.register')}}">Register As Admin</a></li>
+                          <li><a href="{{route('admin.register')}}">Register As Admin modified</a></li>
                          
                         </ul>
                       </li>
