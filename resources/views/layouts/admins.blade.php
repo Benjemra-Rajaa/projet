@@ -1,7 +1,6 @@
 @extends('layouts.app')    
 @section('Css')
-    <style>
-            
+    <style>        
     </style>
 @endsection
 @section('content')
@@ -12,7 +11,7 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                   List User
+                   List Admins
                 </div>
     
                 <div class="card-body">
@@ -20,11 +19,11 @@
                         <thead>
                             <tr>
                                 <th>
-                                    Name
+                                    Email
                                 </th>
                                 
                                 <th>
-                                    Email
+                                    Name
                                 </th>
                                
                             </tr>
@@ -33,13 +32,13 @@
                     </thead>
                     <tbody>
                         <tbody>
-                            @foreach ($clients as $d)
+                            @foreach ($admins as $d)
                                 <tr>
                                     <td>
-                                        {{ $d->name }}
+                                        {{ $d->email}}
                                     </td>
                                     <td>
-                                        {{ $d->email }}
+                                        {{ $d->name }}
                                     </td>
                                     
                                  
@@ -60,4 +59,3 @@
 
         </script>
     @endsection
-         

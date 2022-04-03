@@ -45,6 +45,16 @@
             </p>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a href="{{route('admins')}}" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              admins
+             
+            </p>
+          </a>
+        </li>
         
         <li class="nav-item">
           <a href="{{route('docteurs')}}" class="nav-link active">
@@ -86,7 +96,7 @@
               <form action ="{{route('logout')}}" id="logoutform" method="post">
               @csrf
               </form>
-              deconnecter
+              deconnecter user 
               <span class="right badge badge-danger">Out</span>
             </p>
           </a>

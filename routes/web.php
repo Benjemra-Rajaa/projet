@@ -108,6 +108,8 @@ Route::get('showserv/{id}',[ServiceController::class,'showserv'])->name('showser
 Route::post('listEvent',[EventController::class,'listEvent'])->name('listEvent'); 
 Route::get('events',[EventController::class,'listEvent'])->name('events'); 
 
+// Route::get('admins',[AdminController\AdminController::class,'listAdmin'])->name('admins'); 
+// Route::get('admins','AdminController\AdminController@listAdmin')->name('admins');
 
 
 

@@ -83,9 +83,12 @@
                                     </td>
                                    
                                     <td>
+                                        @auth('admin')
                                       <a href="{{ "deleteServ/" . $d->id }}" class="btn btn-default">Supp</a> 
                                       <a href="{{ route('updateserv', $d->id) }}" class="btn btn-default">update</a> 
+                                      @endauth
                                       <a href="{{ route('showserv', $d->id) }}" class="btn btn-default">show</a> 
+                                     
                                     </td>
                                 </tr>
                             @endforeach

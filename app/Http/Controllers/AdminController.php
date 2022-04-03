@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function index()
-    {
+    {   
         return view ('admin');
     }
     public function getClientPage(){
@@ -22,5 +22,5 @@ class AdminController extends Controller
     public function getAppoinmentPage(){
         return view('layouts.appoinment');
     }
-    
+   
 }

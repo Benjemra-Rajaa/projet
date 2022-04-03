@@ -131,9 +131,12 @@
                                         {{ $d->email }}
                                     </td>
                                     <td>
+                                        @auth('admin')
                                       <a href="{{ "deleteDoc/" . $d->id }}" class="btn btn-default">Supp</a> 
-                                      <a href="{{ route('updatedoc', $d->id) }}" class="btn btn-default">update</a> 
+                                      <a href="{{ route('updatedoc', $d->id) }}" class="btn btn-default">update</a>
+                                      @endauth 
                                       <a href="{{ route('showdoc', $d->id) }}" class="btn btn-default">show</a> 
+                                      
                                     </td>
                                 </tr>
                             @endforeach
