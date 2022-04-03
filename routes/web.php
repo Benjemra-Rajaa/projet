@@ -40,6 +40,7 @@ Route::group(['prefix'=>'Admin'], function(){
     Route::post('/login','AdminController\LoginController@loginAdmin')->name('admin/login');
     Route::post('/logout','AdminController\LoginController@destroy_Admin')->name('admin.logout');
     // Route::get('connect', 'AccountController@connect')->name('connect');
+
 });
 //full calendar
 Route::get('/full-calender', [FullCalenderController::class, 'index']);
@@ -108,8 +109,9 @@ Route::get('showserv/{id}',[ServiceController::class,'showserv'])->name('showser
 Route::post('listEvent',[EventController::class,'listEvent'])->name('listEvent'); 
 Route::get('events',[EventController::class,'listEvent'])->name('events'); 
 
-// Route::get('admins',[AdminController\AdminController::class,'listAdmin'])->name('admins'); 
-// Route::get('admins','AdminController\AdminController@listAdmin')->name('admins');
+// Route::get('admins',[AdminController\AdminController::class,'listAdmin'])->name('admins');
+Route::get('admins','AdminController\AdminController@listAdmin')->name('admins');
+
 
 
 
