@@ -24,13 +24,9 @@ class isAdmin
         elseif(Auth::guard('web')->check()){
             return redirect('clients');
         }
-
-        // else if(auth('web')->user()->isAdmin == 1){
-        //     return $next($request);
-        // }
-        // else {
-        //     return redirect('clients')->with('error',"You don't have admin access.");
-        // }
+        elseif(Auth::guard('doctor')->check()){
+            return redirect('clients');
+        }
    
        return redirect('clients')->with('error',"You don't have admin access.");
        

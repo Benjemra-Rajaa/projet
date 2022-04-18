@@ -25,9 +25,13 @@ class RedirectIfAuthenticated
             if (Auth::guard('web')->check()) {
                 return redirect(RouteServiceProvider::CLIENTS);
             }
+            else if (Auth::guard('doctor')->check()) {
+                return redirect(RouteServiceProvider::CLIENTS);
+            }
             else  if(Auth::guard('admin')->check()) {
                 return redirect(RouteServiceProvider::HOME);
             }
+            
         }
 
         return $next($request);
