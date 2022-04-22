@@ -42,6 +42,17 @@ Route::group(['prefix'=>'Admin'], function(){
     // Route::get('connect', 'AccountController@connect')->name('connect');
 
 });
+
+//doctor register 
+Route::group(['prefix'=>'Doctor'],function(){
+Route::get('/login', 'DoctorController\RegisterDoctorController@login')->name('admin.login');
+Route::get('/register','DoctorController\RegisterDoctorController@register')->name('doctor.register');
+Route::post('/register/doctor','DoctorController\RegisterDoctorController@storeDoctor')->name('doctor.store');
+Route::post('/login','DoctorController\LoginController@loginDoctor')->name('doctor/login');
+Route::get('/{id}','DoctorController\DoctorController@show_doctor')->name('doctor');
+
+
+});
 //full calendar
 Route::get('/full-calender', [FullCalenderController::class, 'index']);
 Route::post('full-calender/action', [FullCalenderController::class, 'action']);
@@ -112,10 +123,6 @@ Route::get('events',[EventController::class,'listEvent'])->name('events');
 // Route::get('admins',[AdminController\AdminController::class,'listAdmin'])->name('admins');
 Route::get('admins','AdminController\AdminController@listAdmin')->name('admins');
 
-
-
-
-      
 
 
 
